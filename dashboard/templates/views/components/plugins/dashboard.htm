@@ -1,0 +1,93 @@
+{% load i18n %} 
+
+<style>
+    h1 {
+        font-size: medium;
+        font-weight: 600;
+    }
+    h2 {
+        font-size: small;
+        font-weight: 600;
+        margin: 6px 0 3px;
+    }
+
+    .dashboard-container {
+        background-color: #fff;
+        color: #386ea4;
+        border-style: solid 1px #eee;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: baseline;
+        width: 100%;
+        height: inherit;
+        padding-top: 25px;
+    }
+
+    .dashboard-summary {
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        height: inherit;
+        padding: 0 20px;
+    }
+
+    .summary-item {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+    .dashboard-history {
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: left;
+        height: inherit;
+        padding: 20px 0;
+    }
+
+    .dashboard-history-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dashboard-history-grid .history-item {
+        padding: 5px 0;
+        text-align: left;
+    }
+
+</style>
+
+<!--ko ifnot: $data.loading -->
+<div class="dashboard-container">
+    <div class="dashboard-summary">
+        <h1>Current Summary</h1>
+        <div class="summary-item">
+            <h2>Resources:</h2>
+            <div data-bind="text: $data.resourceCount"></div>
+        </div>
+        <div class="summary-item">
+            <h2>Tiles:</h2>
+            <div data-bind="text: $data.tileCount"></div>
+        </div>
+        <button class="btn btn-primary" style="width: fit-content; margin-top: 5px" data-bind="click: $data.saveStatus">Record Summary</button>
+        <div class="dashboard-history">
+            <h1>Summary History</h1>
+            <div class="dashboard-history-grid">
+                <h2 class="history-item">Resources:</h2>
+                <h2 class="history-item">Tiles:</h2>
+                <h2 class="history-item" style="width:135px">Recorded:</h2>
+                <!--ko foreach: $data.records  -->
+                <div class="history-item" style="padding: 2px;" data-bind="text:$data.resources"></div>
+                <div class="history-item" style="padding: 2px;" data-bind="text:$data.tiles"></div>
+                <div class="history-item" style="padding: 2px; width: 135px" data-bind="text:$data.statetime"></div>
+                <!--/ko -->
+            </div>
+        </div>   
+    </div>
+</div>
+<!--/ko-->

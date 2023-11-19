@@ -1,0 +1,12 @@
+{% extends "javascript.htm" %}
+
+{% load static %}
+{% load l10n %}
+{% load i18n %}
+
+{% block arches_urls %}
+{{ block.super }}
+<div class="arches-urls"
+    dashboard = "{% url 'dashboard' %}"
+></div>
+{% endblock arches_urls %}

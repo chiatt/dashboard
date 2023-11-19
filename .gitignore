@@ -1,0 +1,11 @@
+*.pyc
+*.sublime*
+.DS_Store
+*.djcache
+.vscode/
+node_modules
+
+# Packaging
+*.egg-info/
+build/lib
+dist
