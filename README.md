@@ -21,16 +21,24 @@ INSTALLED_APPS = [
 ]
 ```
 
-3. Update your urls.py file in your project with the following path:   
+3. Update your urls.py file in your project. You'll likely need to add the `re_path` import:
+```
+from django.urls import include, path, re_path
+```
+and then the following path:   
 ```
 re_path(r"^", include("dashboard.urls")),
 ```
 
-4. From your project run migrate to add the model included in the app
-```python manage.py migrate```
+4. From your project run migrate to add the model included in the app:
+```
+python manage.py migrate
+```
 
 5. Next be sure to rebuild your project's frontend to include the plugin:
-```yarn build_development```
+```
+yarn build_development
+```
 
 6. When you're done you should see the Dashboard plugin added to you main navigation bar:
  <img width="652" alt="image" src="https://github.com/chiatt/dashboard/assets/1877663/5c45727d-fee9-46c1-94fa-fa18358353bf">
