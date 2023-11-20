@@ -23,7 +23,7 @@ INSTALLED_APPS = [
 
 3. Update your urls.py file in your project with the following path:   
 ```
-re_path(r"^", include("demo_app.urls")),
+re_path(r"^", include("dashboard.urls")),
 ```
 
 4. From your project run migrate to add the model included in the app
