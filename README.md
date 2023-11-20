@@ -6,7 +6,7 @@ that summary to monitor the change in the resource/tile count over time.
 
 You can add the dashboard to an Arches project in just a few easy steps.
 
-1. Install if from this repo (or clone this repo and pip install it locally)
+1. Install if from this repo (or clone this repo and pip install it locally). 
 ```
 pip install git+https://github.com/chiatt/dashboard.git
 ```
@@ -26,10 +26,10 @@ INSTALLED_APPS = [
 re_path(r"^", include("demo_app.urls")),
 ```
 
-4. Run migrate to add the model included in the app
+4. From your project run migrate to add the model included in the app
 ```python manage.py migrate```
 
-5. Be sure to rebuild your project's frontend to include the plugin:
+5. Next be sure to rebuild your project's frontend to include the plugin:
 ```yarn build_development```
 
 6. When you're done you should see the Dashboard plugin added to you main navigation bar:
