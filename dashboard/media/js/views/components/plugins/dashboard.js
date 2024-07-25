@@ -11,7 +11,7 @@ define([
         this.records = ko.observable();
 
         this.getStatus = async function() {
-            const response = await window.fetch("dashboard");
+            const response = await window.fetch(arches.urls.dashdata);
             const data = await response.json();
             self.resourceCount = data.resource_count;
             self.tileCount = data.tile_count;
@@ -20,7 +20,7 @@ define([
         };
 
         this.saveStatus = async function() {
-            const response = await fetch("dashboard", {
+            const response = await fetch(arches.urls.dashdata, {
                 method: 'POST',
                 credentials: 'include',
                 headers: {

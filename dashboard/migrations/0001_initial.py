@@ -14,8 +14,8 @@ class Migration(migrations.Migration):
         INSERT INTO plugins (
             pluginid, name, icon, component, componentname, config, slug, sortorder)
         VALUES (
-            'af06e949-5e16-49f0-b23e-e8529e8ce321',
-            'Dashboard',
+            'ea7c3112-a3a6-4016-9da0-b9eee0c5e454',
+            '{"en": "Dashboard"}',
             'fa fa-pie-chart',
             'views/components/plugins/dashboard',
             'dashboard', 
@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
         """
     
     reverse = """
-        DELETE FROM plugins where pluginid = 'af06e949-5e16-49f0-b23e-e8529e8ce321';
+        DELETE FROM plugins where pluginid = 'ea7c3112-a3a6-4016-9da0-b9eee0c5e454';
         DELETE FROM system_record;
         """
 
